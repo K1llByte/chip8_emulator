@@ -7,8 +7,30 @@
 - [ ] Opcode Handling
 
 - [ ] CHIP-8 ROM Parser
-- [ ] OpenGL graphics
-- [ ] Input Handling
+- [ ] OpenGL graphics unit
+- [ ] SDL/GLUT Input Handling
+
+## Detailed TODO
+
+
+The chip8 microprocessor emulator will have a central namespace containing the corresponding core 
+for assembling all functionality.
+
+This core might have its units as "modular" objects that can be outside constructed for custom graphics and input units (or the default ones)
+
+**Example**
+```c++
+class core
+{
+    /* ... */
+    graphics_t graphics_unit;
+    input_handler_t input_unit;
+    /* ... */
+}
+```
+
+
+___
 
 ## Opcodes
 
