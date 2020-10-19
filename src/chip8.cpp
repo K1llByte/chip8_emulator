@@ -73,7 +73,7 @@ inline static void opcode_F() // 9 instructions
 void chip8::core_t::cycle() noexcept
 {
     // Fetch instruction
-    chip8::opcode_t current_instruction{ memory[pc] << 8 | memory[pc+1] };
+    chip8::opcode_t current_instruction{ 0x0000/* memory[pc] << 8 | memory[pc+1] */ };
     
     // Decode instruction
     static const std::array<std::function<void(void)>,16> indexed_switch_case{
