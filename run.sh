@@ -1,9 +1,8 @@
 #!/bin/bash
+build_dirname=build
+exe=$build_dirname/chip8-emu
 
-[ ! -d build ] && meson setup build
-
-cd build
-
-meson compile
-
-./chip8
+meson $build_dirname &&
+meson compile -C $build_dirname &&
+echo -e '\nOutput:' &&
+./$exe "$@"

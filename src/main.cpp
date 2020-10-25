@@ -1,17 +1,16 @@
+#include "vm.hpp"
+
 #include <iostream>
+#include <cstdlib>
 
-#include "chip8.hpp"
+auto main(int argc, char* argv[]) -> int {
+    std::ios::sync_with_stdio(false);
+    std::cin.tie(nullptr);
 
-namespace c8 = chip8;
+    if (argc < 2) {
+        std::cerr << "Expected ROM filename." << std::endl;
+        return EXIT_FAILURE;
+    }
 
-int main(int /* argc */, char** /* argv */)
-{
-    std::cout << "Hello Chip8\n";
-
-    const c8::opcode_t draw          = 0x1111;
-    const c8::opcode_t clear_display = 0x00E0;
-
-    c8::core_t microprocessor{};
-
-    microprocessor.cycle();
+    chip8::VM();
 }
