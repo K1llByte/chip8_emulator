@@ -8,7 +8,6 @@
 #include <cstddef>
 
 namespace chip8 {
-
 class Memory final {
   public:
     enum : usize { SIZE = 4_KiB };

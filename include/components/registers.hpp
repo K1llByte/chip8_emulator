@@ -7,7 +7,6 @@
 #include <cstddef>
 
 namespace chip8 {
-
 class Registers final {
   public:
     enum class Register : usize {
