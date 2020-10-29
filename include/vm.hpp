@@ -22,6 +22,9 @@ class VM final {
     Memory memory;
     Screen screen;
     Keyboard keyboard;
+
+
+    void cycle();
 };
 } // namespace chip8
 
